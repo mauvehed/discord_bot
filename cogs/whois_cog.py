@@ -1,7 +1,7 @@
 import discord
 from discord import app_commands
 from discord.ext import commands
-from datetime import datetime
+from datetime import datetime, UTC
 
 class WhoisCog(commands.Cog):
     def __init__(self, bot):
@@ -78,7 +78,7 @@ class WhoisCog(commands.Cog):
         
         # Footer with current time
         embed.set_footer(text=f"Requested by {interaction.user.name}")
-        embed.timestamp = datetime.utcnow()
+        embed.timestamp = datetime.now(UTC)
         
         await interaction.response.send_message(embed=embed)
 
