@@ -38,7 +38,7 @@ pip install -e ".[dev]"  # Installs both main and development dependencies
 ```
 
 4. Configure your bot:
-   - Copy the `.env` file and rename it to `.env`
+   - Copy `.env.example` to `.env`
    - Replace `your_bot_token_here` with your actual Discord bot token
 
 5. Run the bot:
@@ -53,7 +53,7 @@ discord_bot/
 ├── bot.py              # Main bot file
 ├── requirements.txt    # Python dependencies
 ├── setup.py           # Project installation configuration
-├── .env               # Environment variables
+├── .env.example       # Environment variables template
 ├── tests/             # Test directory
 │   └── test_whois_cog.py  # Tests for whois command
 └── cogs/              # Cog directory
