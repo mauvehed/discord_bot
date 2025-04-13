@@ -53,7 +53,16 @@ class WhoisCog(commands.Cog):
         # Role Information
         roles = [role.mention for role in user.roles[1:]]  # Skip @everyone role
         roles_text = ", ".join(roles) if roles else "No roles"
-        embed.add_field(name=f"Roles ({len(roles)})", value=roles_text, inline=False)
+        
+        # If roles text is too long, split it into multiple fields
+        if len(roles_text) > 1024:
+            # Split roles into chunks of 1000 characters
+            chunks = [roles_text[i:i+1000] for i in range(0, len(roles_text), 1000)]
+            for i, chunk in enumerate(chunks, 1):
+                field_name = f"Roles Part {i}" if len(chunks) > 1 else "Roles"
+                embed.add_field(name=field_name, value=chunk, inline=False)
+        else:
+            embed.add_field(name=f"Roles ({len(roles)})", value=roles_text, inline=False)
         
         # Additional Information
         embed.add_field(
