@@ -1,0 +1,13 @@
+[project]
+name = "discord-bot"
+version = "0.1.0"
+description = "A Discord bot framework built with Python 3 and discord.py, designed to support slash commands and modular cogs."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "discord-py>=2.5.2",
+    "pytest>=8.3.5",
+    "pytest-asyncio>=0.26.0",
+    "pytest-cov>=6.1.1",
+    "python-dotenv>=1.1.0",
+]
