@@ -15,7 +15,7 @@ A Discord bot framework built with Python 3 and discord.py, designed to support 
 ## Prerequisites
 
 - Python 3.8 or higher
-- pip (Python package manager)
+- uv (Python package and project manager)
 - A Discord bot token (get one from the [Discord Developer Portal](https://discord.com/developers/applications))
 
 ## Setup
@@ -28,13 +28,13 @@ cd discord_bot
 
 2. Create and activate a virtual environment (recommended):
 ```bash
-python -m venv venv
-source venv/bin/activate  # On Windows, use: venv\Scripts\activate
+uv venv
+source .venv/bin/activate  # On Windows, use: .venv\Scripts\activate
 ```
 
 3. Install dependencies:
 ```bash
-pip install -e ".[dev]"  # Installs both main and development dependencies
+uv pip install -e ".[dev]"  # Installs both main and development dependencies
 ```
 
 4. Configure your bot:
@@ -105,12 +105,12 @@ Place your new cog file in the `cogs` directory. The bot will automatically load
 The project includes comprehensive tests for the whois command. To run the tests:
 
 ```bash
-pytest tests/
+uv run pytest tests/
 ```
 
 For coverage report:
 ```bash
-pytest --cov=cogs tests/
+uv run pytest --cov=cogs tests/
 ```
 
 Current test coverage:
@@ -139,7 +139,7 @@ Current test coverage:
    - Ensure the bot has been invited to your server with proper permissions
 
 3. **Tests failing**
-   - Make sure all dependencies are installed: `pip install -e ".[dev]"`
+   - Make sure all dependencies are installed: `uv pip install -e ".[dev]"`
    - Check that you're in the correct directory
    - Verify your Python version is 3.8 or higher
 
